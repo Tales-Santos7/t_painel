@@ -9,12 +9,12 @@ import MainSectionForm from "./components/MainSectionForm";
 function App() {
   return (
     <div className="App">
-      <PostForm />
-      <PostList />
-      <AboutForm />
-      <GalleryForm />
       <MainSectionForm />
       <MainSectionDisplay />
+      <GalleryForm />
+      <AboutForm />
+      <PostForm />
+      <PostList />
     </div>
   );
   
