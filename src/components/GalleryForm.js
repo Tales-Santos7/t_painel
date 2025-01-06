@@ -24,7 +24,9 @@ const GalleryForm = () => {
     const fetchGallery = async () => {
       try {
         const response = await axios.get('https://portifolio-taty.onrender.com/content/gallery');
-        setImages(response.data.images || []);
+        const baseUrl = 'https://portifolio-taty.onrender.com'; // Adicione o domínio base
+        const fullImageUrls = response.data.images.map((path) => `${baseUrl}${path}`); // Constrói as URLs completas
+        setImages(fullImageUrls);
       } catch (error) {
         console.error('Erro ao carregar galeria:', error);
       }
