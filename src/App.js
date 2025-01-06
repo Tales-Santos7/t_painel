@@ -14,6 +14,7 @@ function App() {
       <AboutForm />
       <GalleryForm />
       <MainSectionForm />
+      <MainSectionDisplay />
     </div>
   );
   
