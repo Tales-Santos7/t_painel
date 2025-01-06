@@ -8,7 +8,7 @@ const AboutForm = () => {
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/content/about');
+        const response = await axios.get('https://portifolio-taty.onrender.com/content/about');
         setTitle(response.data.title);
         setDescription(response.data.description);
       } catch (error) {
@@ -21,7 +21,7 @@ const AboutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put('http://localhost:3000/content/about', {
+      await axios.put('https://portifolio-taty.onrender.com/content/about', {
         title,
         description,
       });

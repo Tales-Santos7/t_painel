@@ -14,7 +14,7 @@ const PostList = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/blog');
+        const response = await axios.get('https://portifolio-taty.onrender.com/blog');
         setPosts(response.data);
       } catch (error) {
         console.error('Erro ao carregar posts:', error);
@@ -56,7 +56,7 @@ const PostList = () => {
         updatedData.append('image', formData.image);
       }
 
-      const response = await axios.put(`http://localhost:3000/blog/${editingPost}`, updatedData, {
+      const response = await axios.put(`https://portifolio-taty.onrender.com/blog/${editingPost}`, updatedData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -82,7 +82,7 @@ const PostList = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:3000/blog/${postId}`);
+      await axios.delete(`https://portifolio-taty.onrender.com/blog/${postId}`);
       alert('Post excluído com sucesso!');
       setPosts(posts.filter((post) => post._id !== postId));
     } catch (error) {

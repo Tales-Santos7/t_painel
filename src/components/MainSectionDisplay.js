@@ -8,7 +8,7 @@ const MainSectionDisplay = () => {
     // Carregar a seção principal
     const fetchMainSection = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/content/mainSection');
+        const response = await axios.get('https://portifolio-taty.onrender.com/content/mainSection');
         setMainSection(response.data);
       } catch (error) {
         console.error('Erro ao carregar a seção principal:', error);
@@ -19,7 +19,7 @@ const MainSectionDisplay = () => {
   }, []);
 
   if (!mainSection) {
-    return <p>Carregando seção principal...</p>;
+    return <p> </p>;
   }
 };
 export default MainSectionDisplay;

@@ -10,7 +10,7 @@ const MainSectionForm = () => {
     // Carregar dados existentes
     const fetchMainSection = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/content/mainSection');
+        const response = await axios.get('https://portifolio-taty.onrender.com/content/mainSection');
         if (response.data) {
           setTitle(response.data.title);
           setDescription(response.data.description);
@@ -28,7 +28,7 @@ const MainSectionForm = () => {
     setLoading(true);
 
     try {
-      await axios.put('http://localhost:3000/content/mainSection', {
+      await axios.put('https://portifolio-taty.onrender.com/content/mainSection', {
         title,
         description,
       });

@@ -5,7 +5,7 @@ const GalleryForm = () => {
   const [images, setImages] = useState([]);
   const [newImages, setNewImages] = useState([]);
 
-  fetch('http://localhost:3000/content/gallery')
+  fetch('https://portifolio-taty.onrender.com/content/gallery')
   .then((response) => response.json())
   .then((data) => {
     console.log('Dados da galeria:', data); // Loga os dados recebidos
@@ -23,7 +23,7 @@ const GalleryForm = () => {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/content/gallery');
+        const response = await axios.get('https://portifolio-taty.onrender.com/content/gallery');
         setImages(response.data.images || []);
       } catch (error) {
         console.error('Erro ao carregar galeria:', error);
@@ -50,7 +50,7 @@ const GalleryForm = () => {
     newImages.forEach((image) => formData.append('images', image)); // Adiciona cada imagem ao FormData
   
     try {
-      const response = await axios.put('http://localhost:3000/content/gallery', formData, {
+      const response = await axios.put('https://portifolio-taty.onrender.com/content/gallery', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setImages(response.data.images); // Atualiza o estado com as URLs recebidas do backend
@@ -68,7 +68,7 @@ const GalleryForm = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await axios.delete('http://localhost:3000/content/gallery', {
+      const response = await axios.delete('https://portifolio-taty.onrender.com/content/gallery', {
         data: { imageUrl },
       });
       setImages(response.data.images);
