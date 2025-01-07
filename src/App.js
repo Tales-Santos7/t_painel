@@ -17,8 +17,7 @@ function App() {
       <PostList />
     </div>
   );
-  
-  
+
 }
 
 export default App;

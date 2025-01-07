@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -120,7 +121,7 @@ const PostList = () => {
                   Imagem:
                   <input type="file" onChange={handleImageChange} />
                 </label>
-                <button onClick={handleSaveChanges}>Salvar Alterações</button>
+                <button class="editar" onClick={handleSaveChanges}>Salvar Alterações</button>
                 <button onClick={handleCancelEdit}>Cancelar</button>
               </div>
             ) : (
