@@ -11,7 +11,8 @@ const GalleryForm = () => {
       try {
         const response = await axios.get('https://portifolio-taty.onrender.com/content/gallery');
         const baseUrl = 'https://portifolio-taty.onrender.com'; // Adiciona o domínio base
-        const fullImageUrls = response.data.images.map((path) => `${baseUrl}${path}`); // Constrói as URLs completas
+        const fullImageUrls = response.data.images.map((path) => `${baseUrl}${path}`);
+        // Constrói as URLs completas
         setImages(fullImageUrls);  // Atualiza o estado com as imagens
       } catch (error) {
         console.error('Erro ao carregar galeria:', error);
@@ -55,18 +56,20 @@ const GalleryForm = () => {
   const handleRemove = async (imageUrl) => {
     const confirmDelete = window.confirm('Tem certeza que deseja remover esta imagem?');
     if (!confirmDelete) return;
-
+  
     try {
-      const response = await axios.delete('https://portifolio-taty.onrender.com/content/gallery', {
-        data: { imageUrl },
-      });
-      setImages(response.data.images);  // Atualiza o estado com a galeria após a remoção
+      // Codifica a URL da imagem para evitar problemas de compatibilidade
+      const response = await axios.delete(
+        `https://portifolio-taty.onrender.com/content/gallery?imageUrl=${encodeURIComponent(imageUrl)}`
+      );
+  
+      setImages(response.data.images); // Atualiza a galeria com as imagens restantes
       alert('Imagem removida com sucesso!');
     } catch (error) {
       console.error('Erro ao remover imagem:', error);
       alert('Erro ao remover imagem.');
     }
-  };
+  };  
 
   return (
     <div className="container">

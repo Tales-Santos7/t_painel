@@ -121,7 +121,7 @@ const PostList = () => {
                   Imagem:
                   <input type="file" onChange={handleImageChange} />
                 </label>
-                <button class="editar" onClick={handleSaveChanges}>Salvar Alterações</button>
+                <button className="editar" onClick={handleSaveChanges}>Salvar Alterações</button>
                 <button onClick={handleCancelEdit}>Cancelar</button>
               </div>
             ) : (
@@ -129,7 +129,7 @@ const PostList = () => {
                 <h3>{post.title}</h3>
                 <p>{post.content}</p>
                 {post.imageUrl && <img src={post.imageUrl} alt={post.title} />}
-                <button class="editar" onClick={() => handleEditClick(post)}>Editar</button>
+                <button className="editar" onClick={() => handleEditClick(post)}>Editar</button>
                 <button onClick={() => handleDelete(post._id)}>Excluir</button>
               </div>
             )}
