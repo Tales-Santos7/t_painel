@@ -22,7 +22,7 @@ const PostForm = () => {
     }
 
     try {
-      await axios.post('https://portifolio-taty.onrender.com/blog', formData, {
+      await axios.post('https://tatyana-vanin.onrender.com/blog', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       alert('Post criado com sucesso!');

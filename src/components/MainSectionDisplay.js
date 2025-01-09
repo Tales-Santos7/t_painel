@@ -8,7 +8,7 @@ const MainSectionDisplay = () => {
     // Carregar a seção principal
     const fetchMainSection = async () => {
       try {
-        const response = await axios.get('https://portifolio-taty.onrender.com/content/mainSection');
+        const response = await axios.get('https://tatyana-vanin.onrender.com/content/mainSection');
         setMainSection(response.data);
       } catch (error) {
         console.error('Erro ao carregar a seção principal:', error);

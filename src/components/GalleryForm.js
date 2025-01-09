@@ -9,8 +9,8 @@ const GalleryForm = () => {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const response = await axios.get('https://portifolio-taty.onrender.com/content/gallery');
-        const baseUrl = 'https://portifolio-taty.onrender.com'; // Adiciona o domínio base
+        const response = await axios.get('https://tatyana-vanin.onrender.com/content/gallery');
+        const baseUrl = 'https://tatyana-vanin.onrender.com'; // Adiciona o domínio base
         const fullImageUrls = response.data.images.map((path) => `${baseUrl}${path}`);
         // Constrói as URLs completas
         setImages(fullImageUrls);  // Atualiza o estado com as imagens
@@ -40,7 +40,7 @@ const GalleryForm = () => {
     newImages.forEach((image) => formData.append('images', image)); // Adiciona cada imagem ao FormData
   
     try {
-      const response = await axios.put('https://portifolio-taty.onrender.com/content/gallery', formData, {
+      const response = await axios.put('https://tatyana-vanin.onrender.com/content/gallery', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setImages(response.data.images); // Atualiza o estado com as URLs recebidas do backend
@@ -60,7 +60,7 @@ const GalleryForm = () => {
     try {
       // Codifica a URL da imagem para evitar problemas de compatibilidade
       const response = await axios.delete(
-        `https://portifolio-taty.onrender.com/content/gallery?imageUrl=${encodeURIComponent(imageUrl)}`
+        `https://tatyana-vanin.onrender.com/content/gallery?imageUrl=${encodeURIComponent(imageUrl)}`
       );
   
       setImages(response.data.images); // Atualiza a galeria com as imagens restantes
