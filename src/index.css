@@ -170,3 +170,6 @@ button:focus {
   cursor: pointer;
 }
 
+.post-date {
+  color: #333;
+}
