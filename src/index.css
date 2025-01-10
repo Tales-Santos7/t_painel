@@ -171,5 +171,5 @@ button:focus {
 }
 
 .post-date {
-  color: #111;
+  color: #333 !important;
 }
