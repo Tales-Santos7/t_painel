@@ -16,13 +16,14 @@ const PostList = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get('https://tatyana-vanin.onrender.com/blog');
+        console.log(response.data); // Verifique o que está retornando
         setPosts(response.data);
       } catch (error) {
         console.error('Erro ao carregar posts:', error);
       }
     };
     fetchPosts();
-  }, []);
+  }, []);  
 
   // Handle editing
   const handleEditClick = (post) => {
@@ -129,6 +130,7 @@ const PostList = () => {
                 <h3>{post.title}</h3>
                 <p>{post.content}</p>
                 {post.imageUrl && <img src={post.imageUrl} alt={post.title} />}
+                <p className="post-date">Publicado em: {new Date(post.createdAt).toLocaleDateString('pt-BR')}</p>
                 <button className="editar" onClick={() => handleEditClick(post)}>Editar</button>
                 <button onClick={() => handleDelete(post._id)}>Excluir</button>
               </div>
