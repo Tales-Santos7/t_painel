@@ -13,7 +13,7 @@ const Login = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (username === "admin" && password === "1234") {
+    if (username === "vanin" && password === "1234") {
       onLogin(true);
       sessionStorage.setItem("auth", "true"); // Segurança melhorada
       navigate("/dashboard"); // Redirecionar após login
