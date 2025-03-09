@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -8,30 +7,27 @@ const PostList = () => {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
-    image: null, // Para imagem no caso de edição
+    image: null,
   });
 
-  // Fetch posts
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get('https://tatyana-vanin.onrender.com/blog');
-        console.log(response.data); // Verifique o que está retornando
         setPosts(response.data);
       } catch (error) {
         console.error('Erro ao carregar posts:', error);
       }
     };
     fetchPosts();
-  }, []);  
+  }, []);
 
-  // Handle editing
   const handleEditClick = (post) => {
     setEditingPost(post._id);
     setFormData({
       title: post.title,
       content: post.content,
-      image: null, // Quando edita, mantém a imagem atual
+      image: null,
     });
   };
 
@@ -78,7 +74,6 @@ const PostList = () => {
     }
   };
 
-  // Handle delete
   const handleDelete = async (postId) => {
     const confirmDelete = window.confirm('Tem certeza que deseja excluir este post?');
     if (!confirmDelete) return;
@@ -130,7 +125,7 @@ const PostList = () => {
                 <h3>{post.title}</h3>
                 <p>{post.content}</p>
                 {post.imageUrl && <img src={post.imageUrl} alt={post.title} />}
-                <p className="post-date">Publicado em: {new Date(post.createdAt).toLocaleDateString('pt-BR')}</p>
+                <p className="post-date">Publicado em: {new Date(post.createdAt).toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                 <button className="editar" onClick={() => handleEditClick(post)}>Editar</button>
                 <button onClick={() => handleDelete(post._id)}>Excluir</button>
               </div>
