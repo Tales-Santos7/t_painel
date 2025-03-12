@@ -190,3 +190,11 @@ button:focus {
   width: 50%;
   margin: 0 auto;
 }
+
+.margin {
+  margin-left: 20px;
+}
+
+.margin-color {
+  background-color: #007b81;
+}
