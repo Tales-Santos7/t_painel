@@ -45,7 +45,7 @@ function SocialLinksAdmin() {
   return (
     <div>
       <h3>Gerenciar Redes Sociais</h3>
-      <form onSubmit={handleSubmit}>
+      <form className="form-redes" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Nome"

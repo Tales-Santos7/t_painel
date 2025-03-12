@@ -185,3 +185,8 @@ button:focus {
   transform: translateY(-50%);
   cursor: pointer;
 }
+
+.form-redes {
+  width: 50%;
+  margin: 0 auto;
+}
