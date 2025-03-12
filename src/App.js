@@ -34,11 +34,11 @@ function App() {
           <Route path="/dashboard" element={
             isAuthenticated ? (
               <>
+              <SocialLinksAdmin /> 
                 <MainSectionForm />
                 <MainSectionDisplay />
                 <GalleryForm />
                 <AboutForm />
-                <SocialLinksAdmin /> 
                 <PostForm />
                 <PostList />
               </>
