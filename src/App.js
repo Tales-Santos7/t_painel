@@ -7,6 +7,8 @@ import GalleryForm from "./components/GalleryForm";
 import MainSectionDisplay from "./components/MainSectionDisplay";
 import MainSectionForm from "./components/MainSectionForm";
 import Login from "./Login";
+import SocialLinks from "./components/SocialLinks"; // Exibição no site
+import SocialLinksAdmin from "./components/SocialLinksAdmin"; // Gerenciamento no painel
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -36,6 +38,7 @@ function App() {
                 <MainSectionDisplay />
                 <GalleryForm />
                 <AboutForm />
+                <SocialLinksAdmin /> 
                 <PostForm />
                 <PostList />
               </>
@@ -44,6 +47,7 @@ function App() {
             )
           } />
         </Routes>
+        <SocialLinks />
       </div>
     </Router>
   );
