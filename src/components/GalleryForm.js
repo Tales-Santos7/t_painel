@@ -11,9 +11,10 @@ const GalleryForm = () => {
       try {
         const response = await axios.get('https://tatyana-vanin.onrender.com/content/gallery');
         const baseUrl = 'https://tatyana-vanin.onrender.com'; // Adiciona o domínio base
-        const fullImageUrls = response.data.images.map((path) => `${baseUrl}${path}`);
-        // Constrói as URLs completas
-        setImages(fullImageUrls);  // Atualiza o estado com as imagens
+        const fullImageUrls = response.data.images.map((path) =>
+          path.startsWith('http') ? path : `${baseUrl}${path}`
+        );
+        setImages(fullImageUrls);        
       } catch (error) {
         console.error('Erro ao carregar galeria:', error);
       }
