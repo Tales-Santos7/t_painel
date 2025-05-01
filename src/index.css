@@ -212,3 +212,108 @@
     }
   }
   
+
+/* Modo escuro com detalhes em dourado */
+body.dark-mode {
+  background-color: #1c1b18;
+  color: #f4e7c5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Containers */
+body.dark-mode .card-form,
+body.dark-mode .container,
+body.dark-mode li {
+  background-color: #2a2925;
+  border: 1px solid #4b4320;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Campos */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #3a362e;
+  color: #fcefd7;
+  border: 1px solid #665c3d;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #c2b280;
+}
+
+/* Textos */
+body.dark-mode h2,
+body.dark-mode label {
+  color: #ffe58f;
+}
+
+/* Botões padrão */
+body.dark-mode button {
+  background-color: #c29e4a;
+  color: #1c1b18;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode button:hover {
+  background-color: #b0892c;
+}
+
+/* Botões por função */
+body.dark-mode .btn-blue {
+  background-color: #ffc107;
+  color: #1c1b18;
+}
+body.dark-mode .btn-blue:hover {
+  background-color: #e0a800;
+}
+
+body.dark-mode .btn-red {
+  background-color: #cc5733;
+  color: #fff;
+}
+body.dark-mode .btn-red:hover {
+  background-color: #b03c2f;
+}
+
+body.dark-mode .btn-green {
+  background-color: #d4af37;
+  color: #1c1b18;
+}
+body.dark-mode .btn-green:hover {
+  background-color: #b88a2f;
+}
+
+.btn-modes-floating {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 999;
+  border: none;
+  background-color: #f4e7c5;
+  color: #1c1b18;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-modes-floating:hover {
+  background-color: #ffe58f;
+}
+
+body.dark-mode .btn-modes-floating {
+  background-color: #2a2925;
+  color: #ffc107;
+}
+
+body.dark-mode .btn-modes-floating:hover {
+  background-color: #4b4320;
+}
+
+
