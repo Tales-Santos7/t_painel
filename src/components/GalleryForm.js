@@ -97,7 +97,7 @@ const GalleryForm = () => {
       setImages(fullImageUrls);
       setUpdateImageIndex(null);
       setUpdateFile(null);
-      alert('Imagem atualizada com sucesso!');
+      alert('Imagem atualizada com sucesso! (Atualize a página)');
     } catch (error) {
       console.error('Erro ao atualizar imagem:', error);
       alert('Erro ao atualizar imagem.');

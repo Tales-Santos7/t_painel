@@ -1,215 +1,215 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Container padrão */
-  .container,
-  .card-form {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e0e0e0;
-  }
-  
-  /* Títulos */
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #2c3e50;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
-  }
-  
-  /* Campos do formulário */
-  form label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  form input[type="text"],
-  form input[type="file"],
-  form input[type="url"],
-  form input[type="email"],
-  form textarea,
-  form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  
-  /* Botões padrão */
-  button {
-    background-color: #28a745;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  /* Botões de ação extra */
-  .btn-blue {
-    background-color: #007bff;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .btn-green {
-    background-color: #28a745;
-  }
-  .btn-green:hover {
-    background-color: #218838;
-  }
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
 
-  .btn-blue:hover {
-    background-color: #0069d9;
-  }
-  
-  .btn-red {
-    background-color: #dc3545;
-  }
-  .btn-red:hover {
-    background-color: #c82333;
-  }
-  
-  .margin {
-    margin-left: 10px;
-  }
-  
-  .margin-color {
-    background-color: #007b81;
-  }
-  
-  /* Lista de itens (ex: posts) */
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  li {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Galeria */
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .gallery-item {
-    position: relative;
-  }
-  .gallery-item img {
-    max-width: 200px;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .gallery-item button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 4px;
-  }
-  
-  /* Tabela tipo pai e filho simulada */
-  .table-section {
-    padding: 15px;
-    background-color: #f9f9f9;
-    border: 1px dashed #ccc;
-    border-radius: 4px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .table-section button {
-    background-color: #28a745;
-    padding: 8px 16px;
-  }
-  
-  .img-post {
-    max-width: 400px !important;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+/* Container padrão */
+.container,
+.card-form {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+}
 
-  .margin-botton {
-    margin-bottom: 20px;
-  }
+/* Títulos */
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
 
-  .margin-btn-galery {
-    margin-top: 30px !important;
-  }
+/* Campos do formulário */
+form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
 
-  .password-container {
-    position: relative;
-  }
+form input[type="text"],
+form input[type="file"],
+form input[type="url"],
+form input[type="email"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  .password-eye {
-    position: absolute;
-    top: 28px;
-    right: 30px;
-    transform: translateY(-50%);
-    cursor: pointer;
-  }  
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
 
-  /* Rodapé ou seção social */
-  .rodape-col-4 ul {
-    padding: 0;
-  }
-  .rodape-col-4 li {
-    margin-bottom: 8px;
-  }
-  .rodape-col-4 a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .rodape-col-4 a:hover {
-    text-decoration: underline;
-  }
+/* Botões padrão */
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Botões de ação extra */
+.btn-blue {
+  background-color: #007bff;
+}
+
+.btn-green {
+  background-color: #28a745;
+}
+.btn-green:hover {
+  background-color: #218838;
+}
+
+.btn-blue:hover {
+  background-color: #0069d9;
+}
+
+.btn-red {
+  background-color: #dc3545;
+}
+.btn-red:hover {
+  background-color: #c82333;
+}
+
+.margin {
+  margin-left: 10px;
+}
+
+.margin-color {
+  background-color: #007b81;
+}
+
+/* Lista de itens (ex: posts) */
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Galeria */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+}
+.gallery-item img {
+  max-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.gallery-item button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/* Tabela tipo pai e filho simulada */
+.table-section {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-section button {
+  background-color: #28a745;
+  padding: 8px 16px;
+}
+
+.img-post {
+  max-width: 400px !important;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.margin-botton {
+  margin-bottom: 20px;
+}
+
+.margin-btn-galery {
+  margin-top: 30px !important;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-eye {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Rodapé ou seção social */
+.rodape-col-4 ul {
+  padding: 0;
+}
+.rodape-col-4 li {
+  margin-bottom: 8px;
+}
+.rodape-col-4 a {
+  color: #007bff;
+  text-decoration: none;
+}
+.rodape-col-4 a:hover {
+  text-decoration: underline;
+}
 
 /* Modo escuro com detalhes em dourado */
 body.dark-mode {
   background-color: #1c1b18;
   color: #f4e7c5;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* Containers */
@@ -288,7 +288,7 @@ body.dark-mode .btn-green:hover {
   color: #1c1b18;
   padding: 10px;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
@@ -306,6 +306,21 @@ body.dark-mode .btn-modes-floating {
 
 body.dark-mode .btn-modes-floating:hover {
   background-color: #4b4320;
+}
+
+body.dark-mode .theme-color-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #2a2925;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 900px;
+  border: 1px solid #4b4320;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsividade */

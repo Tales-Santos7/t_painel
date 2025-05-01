@@ -13,7 +13,8 @@ import GalleryForm from "./components/GalleryForm";
 import MainSectionDisplay from "./components/MainSectionDisplay";
 import MainSectionForm from "./components/MainSectionForm";
 import Login from "./Login";
-import SocialLinksAdmin from "./components/SocialLinksAdmin"; // Gerenciamento no painel
+import SocialLinksAdmin from "./components/SocialLinksAdmin";
+import ThemeColorForm from "./components/ThemeColorForm";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -96,6 +97,7 @@ function App() {
               isAuthenticated ? (
                 <>
                   <SocialLinksAdmin />
+                  <ThemeColorForm />
                   <MainSectionForm />
                   <MainSectionDisplay />
                   <GalleryForm />
