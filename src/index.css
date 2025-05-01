@@ -204,14 +204,6 @@
   .rodape-col-4 a:hover {
     text-decoration: underline;
   }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .gallery {
-      flex-direction: column;
-    }
-  }
-  
 
 /* Modo escuro com detalhes em dourado */
 body.dark-mode {
@@ -316,4 +308,15 @@ body.dark-mode .btn-modes-floating:hover {
   background-color: #4b4320;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+  }
+}
 
+@media (max-width: 500px) {
+  .img-post {
+    max-width: 300px !important;
+  }
+}
