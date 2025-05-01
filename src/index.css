@@ -178,6 +178,18 @@
     margin-top: 30px !important;
   }
 
+  .password-container {
+    position: relative;
+  }
+
+  .password-eye {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }  
+
   /* Rodapé ou seção social */
   .rodape-col-4 ul {
     padding: 0;
