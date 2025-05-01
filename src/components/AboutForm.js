@@ -33,29 +33,18 @@ const AboutForm = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Editar Seção Sobre Mim</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Título:</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Descrição:</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        <button type="submit">Salvar Alterações</button>
-      </form>
-    </div>
+      <form onSubmit={handleSubmit} className="card-form">
+  <h2>Editar Seção Sobre Mim</h2>
+  <div>
+    <label>Título:</label>
+    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+  </div>
+  <div>
+    <label>Descrição:</label>
+    <textarea value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
+  </div>
+  <button className="btn-green" type="submit">Salvar Alterações</button>
+</form>
   );
 };
 

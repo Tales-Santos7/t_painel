@@ -6,14 +6,14 @@ function SocialLinks() {
 
   useEffect(() => {
     axios
-      .get("https://tatyana-vanin.onrender.com/social-links") // Atualiza com o URL correto do backend
+      .get("https://tatyana-vanin.onrender.com/social-links")
       .then((response) => setSocialLinks(response.data))
       .catch((error) => console.error("Erro ao buscar redes sociais:", error));
   }, []);
 
   return (
-    <div className="rodape-col-4">
-      <h3>Redes Sociais</h3>
+    <div className="card-form">
+      <h2>Redes Sociais</h2>
       <ul>
         {socialLinks.map((link) => (
           <li key={link._id}>

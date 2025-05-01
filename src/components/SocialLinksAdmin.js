@@ -6,7 +6,7 @@ function SocialLinksAdmin() {
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
   const [editingId, setEditingId] = useState(null);
-  const [statusMessage, setStatusMessage] = useState(""); // Para mensagens de status
+  const [statusMessage, setStatusMessage] = useState("");
 
   useEffect(() => {
     fetchLinks();
@@ -24,7 +24,6 @@ function SocialLinksAdmin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       if (editingId) {
         const confirmUpdate = window.confirm("Tem certeza de que deseja atualizar este link?");
@@ -68,10 +67,10 @@ function SocialLinksAdmin() {
   };
 
   return (
-    <div>
-      <h3>Gerenciar Redes Sociais</h3>
+    <div className="card-form">
+      <h2>Gerenciar Redes Sociais</h2>
 
-      {statusMessage && <div className="status-message">{statusMessage}</div>} {/* Exibe a mensagem de status */}
+      {statusMessage && <div className="status-message">{statusMessage}</div>}
 
       <form className="form-redes" onSubmit={handleSubmit}>
         <input
@@ -80,7 +79,7 @@ function SocialLinksAdmin() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          disabled={editingId} // Bloqueia o campo ao editar
+          disabled={editingId}
         />
         <input
           type="text"
@@ -89,16 +88,22 @@ function SocialLinksAdmin() {
           onChange={(e) => setUrl(e.target.value)}
           required
         />
-        <button type="submit">{editingId ? "Atualizar" : "Adicionar"}</button>
-        {editingId && <button className="margin" onClick={() => setEditingId(null)}>Cancelar</button>}
+        <button className="margin-botton" type="submit">{editingId ? "Atualizar" : "Adicionar"}</button>
+        {editingId && (
+          <button type="button" className="btn-red margin" onClick={() => setEditingId(null)}>
+            Cancelar
+          </button>
+        )}
       </form>
 
       <ul>
         {socialLinks.map((link) => (
           <li className="form-redes" key={link._id}>
-            {link.name} - <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
-            <button className="margin margin-color" onClick={() => handleEdit(link)}>Editar</button>
-            <button className="margin" onClick={() => handleDelete(link._id)}>Excluir</button>
+            <strong>{link.name}</strong> – <a href={link.url} target="_blank" rel="noopener noreferrer">{link.url}</a>
+            <div style={{ marginTop: '10px' }}>
+              <button className="btn-blue margin" onClick={() => handleEdit(link)}>Editar</button>
+              <button className="btn-red margin" onClick={() => handleDelete(link._id)}>Excluir</button>
+            </div>
           </li>
         ))}
       </ul>

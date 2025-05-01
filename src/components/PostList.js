@@ -89,7 +89,7 @@ const PostList = () => {
   };
 
   return (
-    <div className="container">
+    <div className="card-form">
       <h2>Lista de Posts</h2>
       <ul>
         {posts.map((post) => (
@@ -117,17 +117,27 @@ const PostList = () => {
                   Imagem:
                   <input type="file" onChange={handleImageChange} />
                 </label>
-                <button className="editar" onClick={handleSaveChanges}>Salvar Alterações</button>
-                <button onClick={handleCancelEdit}>Cancelar</button>
+                <button className="btn-blue margin" onClick={handleSaveChanges}>Salvar Alterações</button>
+                <button className="btn-red margin" onClick={handleCancelEdit}>Cancelar</button>
               </div>
             ) : (
               <div>
                 <h3>{post.title}</h3>
                 <p>{post.content}</p>
-                {post.imageUrl && <img src={`https://tatyana-vanin.onrender.com${post.imageUrl}`} alt={post.title} />}
-                <p className="post-date">Publicado em: {new Date(post.createdAt).toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                <button className="editar" onClick={() => handleEditClick(post)}>Editar</button>
-                <button onClick={() => handleDelete(post._id)}>Excluir</button>
+                {post.imageUrl && (
+                  <img className="img-post"
+                    src={`https://tatyana-vanin.onrender.com${post.imageUrl}`}
+                    alt={post.title}
+                    style={{ maxWidth: '100%', borderRadius: '6px', marginTop: '10px' }}
+                  />
+                )}
+                <p className="post-date">Publicado em: {new Date(post.createdAt).toLocaleDateString('pt-BR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}</p>
+                <button className="btn-blue margin" onClick={() => handleEditClick(post)}>Editar</button>
+                <button className="btn-red margin" onClick={() => handleDelete(post._id)}>Excluir</button>
               </div>
             )}
           </li>

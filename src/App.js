@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './index.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -7,7 +8,6 @@ import GalleryForm from "./components/GalleryForm";
 import MainSectionDisplay from "./components/MainSectionDisplay";
 import MainSectionForm from "./components/MainSectionForm";
 import Login from "./Login";
-import SocialLinks from "./components/SocialLinks"; // Exibição no site
 import SocialLinksAdmin from "./components/SocialLinksAdmin"; // Gerenciamento no painel
 
 function App() {
