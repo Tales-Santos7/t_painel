@@ -6,7 +6,7 @@ O projeto oferece uma interface intuitiva, com seções totalmente personalizave
 
 ### Captura do projeto
 
-[<img src="./public/src/img/taty-painel.gif" alt="gif da dela inicial do projeto 'Tatyana-Vanin-Painel'">]
+[<img src="./src/img/taty-painel.gif" alt="gif da dela inicial do projeto 'Tatyana-Vanin-Painel'">]
 
 ### Links
 
