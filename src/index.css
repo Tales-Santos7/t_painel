@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset e tipografia */
 * {
   margin: 0;
   padding: 0;
@@ -7,33 +7,31 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f9f9fb;
+  color: #2e2e2e;
   line-height: 1.6;
 }
 
-/* Container padrão */
+/* Componentes gerais */
 .container,
 .card-form {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #e0e0e0;
 }
 
-/* Títulos */
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: #4c6ef5;
   border-bottom: 1px solid #ddd;
   padding-bottom: 8px;
 }
 
-/* Campos do formulário */
 form label {
   display: block;
   font-weight: 500;
@@ -41,10 +39,7 @@ form label {
   color: #555;
 }
 
-form input[type="text"],
-form input[type="file"],
-form input[type="url"],
-form input[type="email"],
+form input,
 form textarea,
 form select {
   width: 100%;
@@ -52,7 +47,9 @@ form select {
   margin-bottom: 15px;
   font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
 }
 
 form textarea {
@@ -60,19 +57,20 @@ form textarea {
   min-height: 120px;
 }
 
-/* Botões padrão */
+/* Botões */
 button {
-  background-color: #28a745;
+  background-color: #4c6ef5;
   color: white;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #3b5bdb;
 }
 
 button:disabled {
@@ -80,9 +78,11 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Botões de ação extra */
 .btn-blue {
   background-color: #007bff;
+}
+.btn-blue:hover {
+  background-color: #0069d9;
 }
 
 .btn-green {
@@ -90,10 +90,6 @@ button:disabled {
 }
 .btn-green:hover {
   background-color: #218838;
-}
-
-.btn-blue:hover {
-  background-color: #0069d9;
 }
 
 .btn-red {
@@ -107,19 +103,16 @@ button:disabled {
   margin-left: 10px;
 }
 
-.margin-color {
-  background-color: #007b81;
-}
-
-/* Lista de itens (ex: posts) */
+/* Listas */
 ul {
   list-style: none;
   padding: 0;
 }
+
 li {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 15px;
   margin-bottom: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -135,11 +128,13 @@ li {
 .gallery-item {
   position: relative;
 }
+
 .gallery-item img {
   max-width: 200px;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .gallery-item button {
   position: absolute;
   top: 5px;
@@ -149,39 +144,24 @@ li {
   border-radius: 4px;
 }
 
-/* Tabela tipo pai e filho simulada */
-.table-section {
-  padding: 15px;
-  background-color: #f9f9f9;
-  border: 1px dashed #ccc;
-  border-radius: 4px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.table-section button {
-  background-color: #28a745;
-  padding: 8px 16px;
-}
-
+/* Outros */
 .img-post {
-  max-width: 400px !important;
-  border-radius: 6px;
+  width: 70% !important;
+  max-width: 400px;
+  border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .margin-botton {
   margin-bottom: 20px;
 }
-
 .margin-btn-galery {
-  margin-top: 30px !important;
+  margin-top: 30px;
 }
 
 .password-container {
   position: relative;
 }
-
 .password-eye {
   position: absolute;
   top: 28px;
@@ -190,7 +170,7 @@ li {
   cursor: pointer;
 }
 
-/* Rodapé ou seção social */
+/* Rodapé */
 .rodape-col-4 ul {
   padding: 0;
 }
@@ -201,63 +181,110 @@ li {
   color: #007bff;
   text-decoration: none;
 }
+
 .rodape-col-4 a:hover {
   text-decoration: underline;
 }
 
-/* Modo escuro com detalhes em dourado */
-body.dark-mode {
-  background-color: #1c1b18;
-  color: #f4e7c5;
-  font-family: "Segoe UI", sans-serif;
+/* Base tabs */
+.sidebar-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  color: #2e2e2e;
+  background-color: transparent;
 }
 
-/* Containers */
+.sidebar-tab:hover {
+  background-color: #edf0ff;
+  color: #4c6ef5;
+}
+
+/* Light mode */
+.sidebar-tab.light {
+  color: #2e2e2e;
+}
+
+.sidebar-tab.light.active {
+  background-color: #edf0ff;
+  font-weight: 600;
+  color: #4c6ef5;
+}
+
+/* Dark mode */
+.sidebar-tab.dark {
+  color: #f0f0f0;
+  background-color: transparent;
+}
+
+.sidebar-tab.dark:hover {
+  background-color: #4c4c69;
+  color: #ffc107;
+}
+
+.sidebar-tab.dark.active {
+  background-color: #4c6ef5;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Ícone muda de cor junto */
+.sidebar-tab svg {
+  color: inherit;
+}
+
+/* Tema escuro */
+body.dark-mode .link-item {
+  background-color: #2a2a3b;
+  color: #a14e4e;
+}
+
+body.dark-mode {
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+}
+
 body.dark-mode .card-form,
 body.dark-mode .container,
 body.dark-mode li {
-  background-color: #2a2925;
-  border: 1px solid #4b4320;
+  background-color: #2a2a3b;
+  border-color: #4b4b6b;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Campos */
 body.dark-mode input,
 body.dark-mode textarea,
 body.dark-mode select {
-  background-color: #3a362e;
-  color: #fcefd7;
-  border: 1px solid #665c3d;
+  background-color: #3b3b4f;
+  color: #f0f0f0;
+  border: 1px solid #5a5a7a;
 }
 
-body.dark-mode input::placeholder,
-body.dark-mode textarea::placeholder {
-  color: #c2b280;
-}
-
-/* Textos */
 body.dark-mode h2,
 body.dark-mode label {
-  color: #ffe58f;
+  color: #f0e68c;
 }
 
-/* Botões padrão */
 body.dark-mode button {
   background-color: #c29e4a;
-  color: #1c1b18;
+  color: #1e1e2f;
   font-weight: bold;
-  transition: background-color 0.3s;
 }
 
 body.dark-mode button:hover {
   background-color: #b0892c;
 }
 
-/* Botões por função */
 body.dark-mode .btn-blue {
   background-color: #ffc107;
-  color: #1c1b18;
+  color: #1e1e2f;
 }
+
 body.dark-mode .btn-blue:hover {
   background-color: #e0a800;
 }
@@ -266,18 +293,21 @@ body.dark-mode .btn-red {
   background-color: #cc5733;
   color: #fff;
 }
+
 body.dark-mode .btn-red:hover {
   background-color: #b03c2f;
 }
 
 body.dark-mode .btn-green {
   background-color: #d4af37;
-  color: #1c1b18;
+  color: #1e1e2f;
 }
+
 body.dark-mode .btn-green:hover {
   background-color: #b88a2f;
 }
 
+/* Botão flutuante */
 .btn-modes-floating {
   position: fixed;
   top: 90px;
@@ -308,21 +338,7 @@ body.dark-mode .btn-modes-floating:hover {
   background-color: #4b4320;
 }
 
-body.dark-mode .theme-color-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #2a2925;
-  margin: 40px auto;
-  padding: 20px;
-  max-width: 900px;
-  border: 1px solid #4b4320;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Seção de cor do tema */
 .theme-color-form {
   display: flex;
   flex-direction: column;
@@ -338,7 +354,12 @@ body.dark-mode .theme-color-form {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsividade */
+body.dark-mode .theme-color-form {
+  background-color: #2a2925;
+  border: 1px solid #4b4320;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   .gallery {
     flex-direction: column;
@@ -347,6 +368,6 @@ body.dark-mode .theme-color-form {
 
 @media (max-width: 500px) {
   .img-post {
-    max-width: 300px !important;
+    max-width: 300px;
   }
 }

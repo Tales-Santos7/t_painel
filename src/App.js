@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./index.css";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
+import { Icon } from "@iconify/react";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
 import AboutForm from "./components/AboutForm";
@@ -18,23 +18,24 @@ import ThemeColorForm from "./components/ThemeColorForm";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [activeTab, setActiveTab] = useState("social-links");
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const auth = sessionStorage.getItem("auth");
-    if (auth === "true") {
-      setIsAuthenticated(true);
-    }
+    if (auth === "true") setIsAuthenticated(true);
 
     const darkPref = localStorage.getItem("darkMode") === "true";
     setDarkMode(darkPref);
-    document.body.classList.toggle("dark-mode", darkPref);
+    document.body.style.backgroundColor = darkPref ? "#1e1e2f" : "#f9f9fb";
+    document.body.style.color = darkPref ? "#5e5a5a" : "#2e2e2e";
   }, []);
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    document.body.classList.toggle("dark-mode", newMode);
+    document.body.style.backgroundColor = newMode ? "#1e1e2f" : "#f9f9fb";
+    document.body.style.color = newMode ? "#5e5a5a" : "#2e2e2e";
     localStorage.setItem("darkMode", newMode);
   };
 
@@ -43,74 +44,149 @@ function App() {
     sessionStorage.removeItem("auth");
   };
 
+  const tabs = [
+    {
+      id: "social-links",
+      icon: "mdi:link-variant",
+      label: "Redes Sociais",
+      component: <SocialLinksAdmin />,
+    },
+    {
+      id: "theme",
+      icon: "mdi:palette",
+      label: "Cores do Tema",
+      component: <ThemeColorForm />,
+    },
+    {
+      id: "main-form",
+      icon: "mdi:view-dashboard",
+      label: "Seção Principal",
+      component: <MainSectionForm />,
+    },
+    {
+      id: "gallery",
+      icon: "mdi:image-multiple",
+      label: "Galeria",
+      component: <GalleryForm />,
+    },
+    {
+      id: "about",
+      icon: "mdi:account-box-outline",
+      label: "Sobre Mim",
+      component: <AboutForm />,
+    },
+    {
+      id: "posts",
+      icon: "mdi:note-text",
+      label: "Posts",
+      component: (
+        <>
+          <PostForm />
+          <PostList />
+        </>
+      ),
+    },
+  ];
+
   return (
     <Router>
-      <div className="App">
-        {isAuthenticated && (
+      <div
+        style={{
+          display: "flex",
+          minHeight: "100vh",
+          fontFamily: "Segoe UI, sans-serif",
+        }}
+      >
+        {isAuthenticated ? (
           <>
-            <button className="logout_btn" onClick={handleLogout}>
-              Logout
-            </button>
-
-             <button  className="btn-modes-floating"
-              onClick={toggleDarkMode}
-              aria-label="Alternar modo escuro">
-              {darkMode ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e0a800"
+            <aside
+              style={{
+                width: "240px",
+                background: darkMode ? "#2a2a3b" : "#fff",
+                padding: "2rem 1.5rem",
+                borderRight: "1px solid #e2e2e2",
+              }}
+            >
+              <h1
+                style={{
+                  fontSize: "1.5rem",
+                  marginBottom: "2rem",
+                  color: "#4c6ef5",
+                }}
+              >
+                Painel
+              </h1>
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`sidebar-tab ${
+                    activeTab === tab.id ? "active" : ""
+                  } ${darkMode ? "dark" : "light"}`}
                 >
-                  <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#0e0127"
-                >
-                  <path d="M560-80q-82 0-155-31.5t-127.5-86Q223-252 191.5-325T160-480q0-83 31.5-155.5t86-127Q332-817 405-848.5T560-880q54 0 105 14t95 40q-91 53-145.5 143.5T560-480q0 112 54.5 202.5T760-134q-44 26-95 40T560-80Z" />
-                </svg>
-              )}
-            </button>
-          </>
-        )}
+                  <Icon icon={tab.icon} width={20} />
+                  <span>{tab.label}</span>
+                </div>
+              ))}
+              <div
+                onClick={handleLogout}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.8rem",
+                  padding: "0.75rem 1rem",
+                  borderRadius: "12px",
+                  cursor: "pointer",
+                  color: "#e03131",
+                }}
+              >
+                <Icon icon="mdi:logout" width={20} /> <span>Sair</span>
+              </div>
+              <button
+                onClick={toggleDarkMode}
+                style={{
+                  marginTop: "2rem",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                <Icon
+                  icon={darkMode ? "mdi:weather-sunny" : "mdi:weather-night"}
+                  width={24}
+                  color={darkMode ? "#facc15" : "#0e0127"}
+                />
+              </button>
+            </aside>
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              isAuthenticated ? (
-                <Navigate to="/dashboard" />
-              ) : (
-                <Login onLogin={setIsAuthenticated} />
-              )
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              isAuthenticated ? (
-                <>
+            <main
+              style={{
+                flex: 1,
+                padding: "2rem",
+                background: darkMode ? "#1e1e2f" : "#f9f9fb",
+              }}
+            >
+              <div
+                style={{
+                  background: darkMode ? "#2a2a3b" : "#fff",
+                  padding: "2rem",
+                  borderRadius: "12px",
+                  border: "1px solid #e2e2e2",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.03)",
+                }}
+              >
+                {tabs.find((t) => t.id === activeTab)?.component || (
                   <SocialLinksAdmin />
-                  <ThemeColorForm />
-                  <MainSectionForm />
-                  <MainSectionDisplay />
-                  <GalleryForm />
-                  <AboutForm />
-                  <PostForm />
-                  <PostList />
-                </>
-              ) : (
-                <Navigate to="/" />
-              )
-            }
-          />
-        </Routes>
+                )}
+              </div>
+            </main>
+          </>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Login onLogin={setIsAuthenticated} />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        )}
       </div>
     </Router>
   );
